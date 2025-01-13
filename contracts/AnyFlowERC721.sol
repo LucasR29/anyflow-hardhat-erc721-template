@@ -14,11 +14,11 @@ contract AnyFlowERC721 is ERC721 {
     }
 
     constructor(
+        address _initialOwner,
         string memory _name,
         string memory _symbol
     ) ERC721(_name, _symbol) {
-        _owner = msg.sender;
-        emit OwnershipTransferred(address(0), msg.sender);
+        _owner = _initialOwner;
     }
 
     /**
